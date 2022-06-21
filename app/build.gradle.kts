@@ -1,19 +1,20 @@
 plugins {
-    id ("com.android.application")
-    id ("org.jetbrains.kotlin.android")
+    id(Plugins.application)
+    id(Plugins.kotlinAndroid)
+    id(Plugins.kotlinKapt)
 }
 
 android {
-    compileSdk = 32
+    compileSdk = AndroidConfig.compileSdkVersion
 
     defaultConfig {
-        applicationId = "com.ekyrizky.marvelpedia"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = AndroidConfig.applicationId
+        minSdk = AndroidConfig.minSdkVersion
+        targetSdk = AndroidConfig.targetSdkVersion
+        versionCode = AndroidConfig.versionCode
+        versionName = AndroidConfig.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = AndroidConfig.testRunner
     }
 
     buildTypes {
@@ -36,15 +37,41 @@ android {
 
 dependencies {
 
-    implementation ("androidx.core:core-ktx:1.8.0")
-    implementation ("androidx.appcompat:appcompat:1.4.2")
-    implementation ("com.google.android.material:material:1.6.1")
-    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.4.2")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.4.2")
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    implementation(AndroidXCore.core)
+    implementation(AndroidXAppCompat.appCompat)
+    implementation(Material.material)
+    implementation(AndroidXLayout.constraintLayout)
+
+    implementation(AndroidXLifecycle.liveDataKtx)
+    implementation(AndroidXLifecycle.viewModelKtx)
+    implementation(AndroidXNavigation.fragmentKtx)
+    implementation(AndroidXNavigation.uiKtx)
+    implementation(AndroidXFragment.fragmentKtx)
+    implementation(Coroutine.coroutineCore)
+
+    implementation(DaggerHilt.android)
+    kapt(DaggerHilt.compiler)
+    kapt(DaggerHilt.androidCompiler)
+    implementation(AndroidXHilt.lifecycle)
+    kapt(AndroidXHilt.compiler)
+
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.moshi)
+    implementation(Retrofit.logging)
+
+    implementation(Room.roomRuntime)
+    kapt(Room.roomCompiler)
+    implementation(Room.roomKtx)
+    implementation(Room.roomPaging)
+
+    implementation(DataStore.preferences)
+
+    implementation(Paging3.paging)
+
+    implementation(Image.glide)
+    kapt(Image.glideCompiler)
+
+    testImplementation(AndroidXJUnit.junit)
+    androidTestImplementation(AndroidXJUnit.junitExt)
+    androidTestImplementation(EspressoTest.espressoCore)
 }
