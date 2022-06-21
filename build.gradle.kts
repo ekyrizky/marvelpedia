@@ -3,6 +3,7 @@ plugins {
     id(Plugins.application) version PluginVersions.gradle apply false
     id(Plugins.gradle) version PluginVersions.gradle apply false
     id(Plugins.kotlinAndroid) version PluginVersions.kotlin apply false
+    id(Plugins.secret) version PluginVersions.secret apply false
 }
 
 tasks.register("clean", Delete::class) {

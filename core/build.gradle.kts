@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.gradle)
     id(Plugins.kotlinAndroid)
+    id(Plugins.secret)
 }
 
 android {
