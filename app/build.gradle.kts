@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
 
     implementation(AndroidXCore.core)
     implementation(AndroidXAppCompat.appCompat)

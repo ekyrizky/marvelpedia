@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "marvelpedia"
-include (":app")
+include(":app")
+include(":core")
