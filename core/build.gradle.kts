@@ -34,4 +34,7 @@ dependencies {
 
     implementation(Retrofit.retrofit)
     implementation(Retrofit.moshi)
+    implementation(Retrofit.logging)
+
+    implementation(DaggerHilt.core)
 }
