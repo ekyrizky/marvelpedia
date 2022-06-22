@@ -37,4 +37,9 @@ dependencies {
     implementation(Retrofit.logging)
 
     implementation(DaggerHilt.core)
+
+    implementation(Coroutine.coroutineCore)
+
+    testImplementation(AndroidXTest.coreTest)
+    testImplementation(Retrofit.mockWebServer)
 }

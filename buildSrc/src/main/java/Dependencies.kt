@@ -58,11 +58,12 @@ object AndroidXHilt {
 
 object Retrofit {
     private const val retrofitVersion = "2.9.0"
-    private const val loggingVersion = "4.9.0"
+    private const val okhttp3Version = "4.9.0"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
     const val moshi = "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
-    const val logging = "com.squareup.okhttp3:logging-interceptor:$loggingVersion"
+    const val logging = "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$okhttp3Version"
 }
 
 object Room {
@@ -102,4 +103,15 @@ object AndroidXJUnit {
 object EspressoTest {
     private const val version = "3.4.0"
     const val espressoCore = "androidx.test.espresso:espresso-core:$version"
+}
+
+object Mockito {
+    private const val version = "4.3.1"
+    const val mockitoCore = "org.mockito:mockito-core:$version"
+    const val mockitoInline = "org.mockito:mockito-inline:$version"
+}
+
+object AndroidXTest {
+    private const val version = "2.1.0"
+    const val coreTest = "androidx.arch.core:core-testing:$version"
 }
